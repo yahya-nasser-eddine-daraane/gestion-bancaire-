@@ -90,10 +90,4 @@ typedef struct {
     double solde;
     int statut; // 1 pour actif, 0 pour inactif
 } Compte;
-### transaction 
-```c
-typedef struct {
-    int nombre_total_comptes; // Nombre total de comptes actifs
-    double total_fonds;       // Total des fonds détenus dans tous les comptes
-    int transactions_total;   // Nombre total de transactions effectuées
-} StatistiquesGenerales;
+
