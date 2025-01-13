@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1736797046 source:c:\users\hp1\onedrive\desktop\projet c\projetv2\client.c
+	<stdio.h>
+	"client.h"
+	<stdlib.h>
+	<string.h>
+
+1736797035 c:\users\hp1\onedrive\desktop\projet c\projetv2\client.h
+
+1736797062 source:c:\users\hp1\onedrive\desktop\projet c\projetv2\main.c
+	<stdio.h>
+	"client.h"
+	"transaction.h"
+	"recherche.h"
+	"tri.h"
+	"rapport.h"
+	<stdlib.h>
+	<string.h>
+
+1736797035 c:\users\hp1\onedrive\desktop\projet c\projetv2\transaction.h
+
+1736797035 c:\users\hp1\onedrive\desktop\projet c\projetv2\recherche.h
+
+1736797035 c:\users\hp1\onedrive\desktop\projet c\projetv2\tri.h
+
+1736797035 c:\users\hp1\onedrive\desktop\projet c\projetv2\rapport.h
+
+1736797096 source:c:\users\hp1\onedrive\desktop\projet c\projetv2\recherche.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"recherche.h"
+	"client.h"
+
+1736797105 source:c:\users\hp1\onedrive\desktop\projet c\projetv2\rapport.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"rapport.h"
+	"client.h"
+
+1736797120 source:c:\users\hp1\onedrive\desktop\projet c\projetv2\transaction.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"client.h"
+	"transaction.h"
+
+1736797151 source:c:\users\hp1\onedrive\desktop\projet c\projetv2\tri.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tri.h"
+	"client.h"
+
