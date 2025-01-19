@@ -4,7 +4,7 @@
 typedef struct {
     char numero_compte[20];
     char type_transaction[20];
-    double montant;
+    float montant;
     char date[20];
 } Transaction;
 
