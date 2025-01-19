@@ -8,7 +8,7 @@ typedef struct {
     char adresse[100];
     char email[50];
     char telephone[15];
-    double solde;
+    float solde;
     int statut; // 1 pour actif, 0 pour inactif
 } Compte;
 
@@ -17,7 +17,6 @@ void enregistrer_client();
 void modifier_client();
 void supprimer_client();
 void afficher_comptes();
-
 void trier_par_nom();
 void trier_par_solde();
 void afficher_historique_transactions();
