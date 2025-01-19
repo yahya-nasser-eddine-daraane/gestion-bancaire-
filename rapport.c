@@ -46,9 +46,9 @@ void afficher_total_fonds() {
     }
 
     Compte client;
-    double total_fonds = 0;
+    float total_fonds = 0;
 
-    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%lf,%d\n",
+    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%f,%d\n",
                   client.numero_compte, client.nom, client.prenom, client.adresse,
                   client.email, client.telephone, &client.solde, &client.statut) != EOF) {
         total_fonds += client.solde;
