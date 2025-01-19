@@ -45,7 +45,7 @@ void rechercher_par_nom() {
 
     Compte client;
     int trouve = 0;
-    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%lf,%d\n",
+    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%f,%d\n",
                   client.numero_compte, client.nom, client.prenom, client.adresse,
                   client.email, client.telephone, &client.solde, &client.statut) != EOF) {
         if (strcmp(client.nom, nom_recherche) == 0) {
@@ -75,7 +75,7 @@ void rechercher_par_numero() {
 
     Compte client;
     int trouve = 0;
-    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%lf,%d\n",
+    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%f,%d\n",
                   client.numero_compte, client.nom, client.prenom, client.adresse,
                   client.email, client.telephone, &client.solde, &client.statut) != EOF) {
         if (strcmp(client.numero_compte, numero_recherche) == 0) {
