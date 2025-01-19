@@ -6,7 +6,7 @@
 #define FICHIER_CLIENTS "clients.csv"
 #define FICHIER_TRANSACTIONS "transactions.csv"
 
-void enregistrer_transaction( char numero_compte, char type, float montant,char D[20]) {
+void enregistrer_transaction( char numero_compte[50], char type[50], float montant,char D[20]) {
     FILE* fichier = fopen(FICHIER_TRANSACTIONS, "a");
     if (!fichier) {
         printf("Erreur d'ouverture du fichier des transactions.\n");
@@ -16,7 +16,7 @@ void enregistrer_transaction( char numero_compte, char type, float montant,char 
     fclose(fichier);
 }
 
-int mettre_a_jour_solde( char numero_compte, float montant) {
+int mettre_a_jour_solde( char numero_compte[50], float montant) {
     FILE* fichier = fopen(FICHIER_CLIENTS, "r");
     FILE* temp = fopen("temp.csv", "w");
     if (!fichier || !temp) {
@@ -30,9 +30,7 @@ int mettre_a_jour_solde( char numero_compte, float montant) {
     int trouve = 0;
     int mise_a_jour_reussie = 1;
 
-    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%f,%d\n",
-                  client.numero_compte, client.nom, client.prenom, client.adresse,
-                  client.email, client.telephone, &client.solde, &client.statut) != EOF) {
+    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%f,%d\n",client.numero_compte, client.nom, client.prenom, client.adresse,client.email, client.telephone, &client.solde, &client.statut) != EOF) {
         if (strcmp(client.numero_compte, numero_compte) == 0) {
             trouve = 1;
   // verifier si le solde est suffisant pour un retrait
@@ -44,9 +42,7 @@ int mettre_a_jour_solde( char numero_compte, float montant) {
             }
         }
         // ecrire les donnees mises a jour (ou non) dans le fichier temporaire
-        fprintf(temp, "%s,%s,%s,%s,%s,%s,%.2f,%d\n",
-                client.numero_compte, client.nom, client.prenom, client.adresse,
-                client.email, client.telephone, client.solde, client.statut);
+        fprintf(temp, "%s,%s,%s,%s,%s,%s,%.2f,%d\n",client.numero_compte, client.nom, client.prenom, client.adresse,client.email, client.telephone, client.solde, client.statut);
     }
 
     fclose(fichier);
