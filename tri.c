@@ -18,7 +18,7 @@ void trier_par_nom() {
     }
 
     // Charger les comptes
-    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%lf,%d\n",
+    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%f,%d\n",
                   clients[nb_clients].numero_compte, clients[nb_clients].nom, clients[nb_clients].prenom,
                   clients[nb_clients].adresse, clients[nb_clients].email, clients[nb_clients].telephone,
                   &clients[nb_clients].solde, &clients[nb_clients].statut) != EOF) {
@@ -80,7 +80,7 @@ void trier_par_solde() {
     }
 
     // Charger les comptes
-    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%lf,%d\n",
+    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%f,%d\n",
                   clients[nb_clients].numero_compte, clients[nb_clients].nom, clients[nb_clients].prenom,
                   clients[nb_clients].adresse, clients[nb_clients].email, clients[nb_clients].telephone,
                   &clients[nb_clients].solde, &clients[nb_clients].statut) != EOF) {
@@ -91,7 +91,7 @@ void trier_par_solde() {
     // Tri par solde
     for (int i = 0; i < nb_clients - 1; i++) {
         for (int j = 0; j < nb_clients - i - 1; j++) {
-            if (clients[j].solde > clients[j + 1].solde) {
+            if (clients[j].solde < clients[j + 1].solde) {
                 Compte temp = clients[j];
                 clients[j] = clients[j + 1];
                 clients[j + 1] = temp;
