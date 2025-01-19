@@ -28,9 +28,7 @@ void enregistrer_client() {
     client.solde = 0.0;
     client.statut = 1; // Actif
 
-    fprintf(fichier, "%s,%s,%s,%s,%s,%s,%.2f,%d\n",
-            client.numero_compte, client.nom, client.prenom, client.adresse,
-            client.email, client.telephone, client.solde, client.statut);
+    fprintf(fichier, "%s,%s,%s,%s,%s,%s,%.2f,%d\n",client.numero_compte, client.nom, client.prenom, client.adresse,client.email, client.telephone, client.solde, client.statut);
 
     fclose(fichier);
     printf("Compte enregistrer avec succes.\n");
@@ -46,7 +44,7 @@ void afficher_comptes() {
     Compte client;
     printf("===== Liste des Comptes =====\n");
     printf("Numero de Compte | Nom | Prenom | Solde | Statut\n");
-    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%lf,%d\n",
+    while (fscanf(fichier, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%f,%d\n",
                   client.numero_compte, client.nom, client.prenom, client.adresse,
                   client.email, client.telephone, &client.solde, &client.statut) != EOF) {
         printf("%s | %s | %s | %.2f | %s\n",
